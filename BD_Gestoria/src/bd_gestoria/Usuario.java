@@ -25,14 +25,19 @@ public class Usuario {
 
     //dar valores a columnas tabla usuarios
     public static String setNIF(Scanner in) {
-        System.out.print("Cual es tu NIF: ");
-        String sNif = in.nextLine().trim().toUpperCase();
+        boolean stay = true;
+        String sNif = "12345678A";
 
-        if (!sNif.matches("\\d{8}[A-Z]")) {
-            System.out.println("El NIF no sigue el formato correcto (8 numeros y 1 letra)");
-            return "123456879";
+        while (stay) {
+            System.out.print("Cual es tu NIF: ");
+            sNif = in.nextLine().trim().toUpperCase();
+
+            if (!sNif.matches("\\d{8}[A-Z]")) {
+                System.out.println("El NIF no sigue el formato correcto (8 numeros y 1 letra)");
+            } else {
+                stay=false;
+            }
         }
-
         return sNif;
     }
 
