@@ -27,7 +27,7 @@ public class Visita {
             System.out.print("Cual es tu NIF: ");
             sNif = in.nextLine().trim().toUpperCase();
 
-            if (!sNif.matches("\\d{8}[A-Z]")&& !Gestion_tb_Usuarios.ComprobarUsuario(sNif)) {
+            if (!sNif.matches("\\d{8}[A-Z]")&& !Gestion_tb_Usuarios.buscarUsuario(sNif)) {
                 System.out.println("\nEl NIF no sigue el formato correcto (8 numeros y 1 letra) o no se ha encontrado");
                 System.out.println("Pruebe de nuevo");
             } else {

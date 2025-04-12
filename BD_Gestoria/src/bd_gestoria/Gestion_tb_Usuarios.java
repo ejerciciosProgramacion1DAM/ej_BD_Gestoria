@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class Gestion_tb_Usuarios {
 
-    public static boolean ComprobarUsuario(String codigo) throws SQLException {
+    public static boolean buscarUsuario(String codigo) throws SQLException {
         try (Connection conexion = ConexionBaseDatos.getConnection()) {
             if (conexion != null) {
                 try {
@@ -27,5 +27,5 @@ public class Gestion_tb_Usuarios {
         }
         return false;
     }
-
+    
 }
