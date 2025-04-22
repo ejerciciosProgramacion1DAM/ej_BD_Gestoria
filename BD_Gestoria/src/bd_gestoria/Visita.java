@@ -19,7 +19,7 @@ public class Visita {
     }
 
     //dar valores a columnas tabla usuarios
-    public static String setNIF(Scanner in) throws SQLException {
+    public static String getNIF(Scanner in) throws SQLException {
         boolean stay = true;
         String sNif = "12345678A";
 
@@ -37,7 +37,7 @@ public class Visita {
         return sNif;
     }
 
-    public static String setFecha_visita(Scanner in) {
+    public static String getFecha_visita(Scanner in) {
 
         System.out.println("Formato de fecha (dd/mm/yyyy).");
         System.out.print("introduce la fecha de la visita: ");
@@ -55,7 +55,7 @@ public class Visita {
         }
     }
 
-    public static String setVisita(Scanner in) {
+    public static String getVisita(Scanner in) {
         menu();
         System.out.print("introduce el nombre de la visita: ");
         String sVisita = in.nextLine().toLowerCase().trim();
@@ -69,7 +69,7 @@ public class Visita {
 
     }
 
-    public static int setVisitaValor(String sVisita) {
+    public static int getVisitaValor(String sVisita) {
         int iValorConsulta;
 
         switch (sVisita) {

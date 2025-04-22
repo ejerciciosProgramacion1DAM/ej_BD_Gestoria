@@ -24,24 +24,7 @@ public class Usuario {
     }
 
     //dar valores a columnas tabla usuarios
-    public static String setNIF(Scanner in) {
-        boolean stay = true;
-        String sNif = "12345678A";
-
-        while (stay) {
-            System.out.print("Cual es tu NIF: ");
-            sNif = in.nextLine().trim().toUpperCase();
-
-            if (!sNif.matches("\\d{8}[A-Z]")) {
-                System.out.println("El NIF no sigue el formato correcto (8 numeros y 1 letra)");
-            } else {
-                stay=false;
-            }
-        }
-        return sNif;
-    }
-
-    public static String setsNombre(Scanner in) {
+    public static String getsNombre(Scanner in) {
         String sNombre = "User";
         System.out.print("Introduce el nombre del usuario: ");
         sNombre = in.nextLine();
@@ -54,7 +37,7 @@ public class Usuario {
         return sNombre;
     }
 
-    public static String setsApellidos(Scanner in) {
+    public static String getsApellidos(Scanner in) {
         String sApellidos = "User";
         System.out.print("Introduce los apellidos del usuario: ");
         sApellidos = in.nextLine();
@@ -67,14 +50,14 @@ public class Usuario {
         return sApellidos;
     }
 
-    public static String setCorreoElectronico(Scanner in) {
+    public static String getCorreoElectronico(Scanner in) {
         System.out.print("Cual es tu NIF: ");
         String sCorreo = in.nextLine();
 
         return sCorreo;
     }
 
-    public static int setTelefono(Scanner in) {
+    public static int getTelefono(Scanner in) {
         int iTelefono;
         System.out.print("Cual es tu telefono: ");
         String sNumero = in.nextLine().trim().toLowerCase();
@@ -83,7 +66,7 @@ public class Usuario {
             System.out.println("El telefono no sigue el formato correcto (9 numeros)");
             return 123456879;
         }
-        iTelefono = Integer.valueOf(sNumero);
+        iTelefono = Integer.parseInt(sNumero);
         return iTelefono;
     }
 }
