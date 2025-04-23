@@ -1,6 +1,5 @@
 Gestion_tb_Visitas:
     buscar -7
-    eliminar -1
     modificar -2
 
 Gestion_tb_Usuarios:

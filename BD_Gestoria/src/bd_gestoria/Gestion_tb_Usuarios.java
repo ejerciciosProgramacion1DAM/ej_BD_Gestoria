@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class Gestion_tb_Usuarios {
 
@@ -28,4 +29,27 @@ public class Gestion_tb_Usuarios {
         return false;
     }
     
+    public static  void agregarUsuario(Connection conexion, Scanner in){
+        try {
+            if (conexion != null) {
+                var stmt = conexion.prepareStatement("INSERT INTO clientes (NIF, Nombre, Apellidos, Correo_electronico, Telefono) VALUES (?,?,?,?,?)");
+                stmt.setString(1, Visita.getNIF(in));
+                stmt.setString(2, Usuario.getsNombre(in));
+                stmt.setString(3, Usuario.getsApellidos(in));
+                stmt.setString(4, Usuario.getCorreoElectronico(in));
+                stmt.setInt(5, Usuario.getTelefono(in));
+                stmt.execute();
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al añadir una sentencia:" + e.getMessage());
+        }
+    }
+    
+    public static void eliminarUsuario(Connection conexion, Scanner in){
+        
+    }
+    
+    public static void modificarUsuario(Connection conexion, Scanner in){
+        
+    }    
 }
