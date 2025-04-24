@@ -29,7 +29,7 @@ public class Gestion_tb_Usuarios {
         return false;
     }
     
-    public static  void agregarUsuario(Connection conexion, Scanner in){
+    public static void agregarUsuario(Connection conexion, Scanner in){
         try {
             if (conexion != null) {
                 var stmt = conexion.prepareStatement("INSERT INTO clientes (NIF, Nombre, Apellidos, Correo_electronico, Telefono) VALUES (?,?,?,?,?)");
