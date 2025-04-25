@@ -1,9 +1,7 @@
 Gestion_tb_Visitas:
     buscar -7
-    modificar -2
 
 Gestion_tb_Usuarios:
-    añadir usuario -3
     eliminar usuario -4
     modificar usuario -5
     visitas realizadas por usuarios -6

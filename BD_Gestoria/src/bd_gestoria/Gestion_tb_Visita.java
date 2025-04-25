@@ -67,7 +67,7 @@ public class Gestion_tb_Visita {
         }
     }
 
-    public static void modificarAlumno(Connection conexion, Scanner in) {
+    public static void modificarVisita(Connection conexion, Scanner in) {
         try {
             System.out.print("Cual es el id de la visita que desea modificar: ");
             int iId = in.nextInt();

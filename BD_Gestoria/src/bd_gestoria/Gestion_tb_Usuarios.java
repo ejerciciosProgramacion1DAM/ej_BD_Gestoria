@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Gestion_tb_Usuarios {
+    public static void sinVisitas(Connection conexion, Scanner in){
+        
+    }
 
     public static boolean buscarUsuario(String codigo) throws SQLException {
         try (Connection conexion = ConexionBaseDatos.getConnection()) {
@@ -46,7 +49,16 @@ public class Gestion_tb_Usuarios {
     }
     
     public static void eliminarUsuario(Connection conexion, Scanner in){
-        
+        try {
+            String nif = Visita.getNIF(in);
+            if (conexion != null || Gestion_tb_Usuarios.buscarUsuario(nif) ) {
+                var stmt = conexion.prepareStatement("DELETE FROM clientes WHERE NIF=?");
+                stmt.setString(1, nif);
+                stmt.execute();
+            }
+        } catch (SQLException e) {
+            System.out.println("ha ocurrido un error al eliminar a una visita: " + e.getMessage());
+        }
     }
     
     public static void modificarUsuario(Connection conexion, Scanner in){
