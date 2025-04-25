@@ -2,7 +2,7 @@ Gestion_tb_Visitas:
     buscar -7
 
 Gestion_tb_Usuarios:
-    eliminar usuario -4
+    eliminar usuario añadir algo que cuente cuantas visitas tiene un -4
     modificar usuario -5
     visitas realizadas por usuarios -6
     Coste total visitas (El total a pagar se deberá mostrar al buscar el usuario en las visitas) -7
