@@ -18,7 +18,7 @@ public class Gestion_tb_Visita {
         System.out.println("3.Salir");
     }
 
-    public static boolean buscarVisita(Connection conexion, int codigo) throws SQLException {
+    public static boolean buscarVisita(Connection conexion, int codigo) {
         if (conexion != null) {
             try {
                 var stmt = conexion.prepareStatement("SELECT * FROM tb_visitas WHERE Idvisitas=?");
@@ -81,14 +81,16 @@ public class Gestion_tb_Visita {
 
             switch (opci) {
                 case 1 -> {
-                    var stmt = conexion.prepareStatement("UPDATE alumno SET Fecha_visita=? WHERE Idvisitas=?");
-                    stmt.setString(1, "");
+                    System.out.print("Cual es la nueva fecha: ");
+                    String fecha=in.nextLine();
+                    var stmt = conexion.prepareStatement("UPDATE tb_visitas SET Fecha_visita=? WHERE Idvisitas=?");
+                    stmt.setString(1, fecha);
                     stmt.setInt(2, iId);
                     stmt.execute();
                 }
                 case 2 -> {
                     Visita.menu();
-                    var stmt = conexion.prepareStatement("UPDATE alumno SET Consulta=?, ValorConsulta=? WHERE Idvisitas=?");
+                    var stmt = conexion.prepareStatement("UPDATE tb_visitas SET Consulta=?, ValorConsulta=? WHERE Idvisitas=?");
                     String consulta= in.nextLine();
                     stmt.setString(1, consulta);
                     stmt.setInt(2, Visita.getVisitaValor(consulta));
